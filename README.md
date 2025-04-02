@@ -14,7 +14,7 @@ Contact, er með enga virkni
 
 ### Hýsing
 
-
+https://vef2-2025-v5-eight.vercel.app/
 
 #### Set up environment variables
 
