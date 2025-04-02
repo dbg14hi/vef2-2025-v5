@@ -66,9 +66,18 @@ body {
 }
 
 // Greinar List Styling
+
+.headName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
 .greinar-list {
   list-style: none;
-  padding: 0;
+  padding: 2rem;
+  max-width: 80%;
+  margin: auto;
 
   li {
     background: white;
@@ -80,10 +89,17 @@ body {
     h4 {
       color: $primary-color;
       margin-bottom: 5px;
+      text-align: center;
     }
 
     p {
       color: $text-color;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Limit to 3 lines */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis; /* Adds "..." */
     }
 
     small {
