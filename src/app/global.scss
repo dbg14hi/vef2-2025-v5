@@ -1,0 +1,142 @@
+// global.scss
+
+// Color Variables
+$primary-color: #333;
+$secondary-color: #f4f4f4;
+$hover-color: #ff5722;
+$text-color: #222;
+$background-color: #f9f9f9;
+
+// Responsive Mixins
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+// Reset and Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: $background-color;
+  color: $text-color;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+// Responsive Container
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+
+  @include responsive(tablet) {
+    max-width: 90%;
+  }
+
+  @include responsive(mobile) {
+    max-width: 95%;
+  }
+}
+
+// Button Styling
+.button {
+  display: inline-block;
+  background: $hover-color;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: darken($hover-color, 10%);
+  }
+}
+
+// Greinar List Styling
+.greinar-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    h4 {
+      color: $primary-color;
+      margin-bottom: 5px;
+    }
+
+    p {
+      color: $text-color;
+    }
+
+    small {
+      color: lighten($text-color, 20%);
+      font-size: 0.9em;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+// Greinar Article Styling
+.greinar-article {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  h1 {
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: darken($text-color, 10%);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  @include responsive(mobile) {
+    padding: 15px;
+  }
+}
+
+// Photo Section Styling
+.photo-section {
+  margin-top: 20px;
+  text-align: center;
+
+  .homepage-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}

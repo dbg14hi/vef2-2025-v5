@@ -1,0 +1,42 @@
+// components/Header.module.scss
+
+$primary-color: #333;
+$secondary-color: #f4f4f4;
+$hover-color: #ff5722;
+
+.header {
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navlink {
+  text-decoration: none;
+  color: $secondary-color;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
